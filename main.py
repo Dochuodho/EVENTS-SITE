@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from sqlalchemy.orm import sessionmaker, declarative_base, relationship
+from sqlalchemy.orm import sessionmaker, declarative_base, relationship, backref
 from sqlalchemy import create_engine, Integer, String, Column, ForeignKey
 
 Base = declarative_base()
@@ -26,7 +26,7 @@ class User(Base):
             f"is using an id of {self.id}"
      
 class Event(Base):
-    __tablename__ = 'events'
+    __tablename__ = 'events' 
     id = Column(Integer(), primary_key=True),
     name = Column(String())
     location = Column(String()) 
